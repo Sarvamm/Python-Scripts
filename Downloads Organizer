@@ -1,0 +1,35 @@
+import os
+from pathlib import Path
+
+def organize_downloads(downloads_folder):
+    # Ensure the folder exists
+    if not os.path.exists(downloads_folder):
+        print(f"The folder {downloads_folder} does not exist.")
+        return
+
+    # Iterate over all files in the downloads folder
+    for file in os.listdir(downloads_folder):
+        file_path = os.path.join(downloads_folder, file)
+
+        # Skip if it's not a file
+        if not os.path.isfile(file_path):
+            continue
+
+        # Extract the file extension
+        file_extension = Path(file).suffix[1:].upper()  # Remove dot and capitalize
+        if not file_extension:  # Handle files without an extension
+            file_extension = "NO_EXTENSION"
+
+        # Create a folder named after the file extension
+        extension_folder = os.path.join(downloads_folder, file_extension)
+        os.makedirs(extension_folder, exist_ok=True)
+
+        # Move the file into the corresponding folder
+        new_file_path = os.path.join(extension_folder, file)
+        os.rename(file_path, new_file_path)
+        print(f"Moved: {file} -> {extension_folder}")
+
+if __name__ == "__main__":
+    # Replace this with your actual Downloads folder path
+    downloads_folder = os.path.join(os.environ["USERPROFILE"], "Downloads")
+    organize_downloads(downloads_folder)
