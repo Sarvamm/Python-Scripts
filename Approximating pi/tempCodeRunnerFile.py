@@ -1,1 +1,0 @@
-Gregory-Leibniz series 
