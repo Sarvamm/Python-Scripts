@@ -205,7 +205,7 @@ with st.sidebar:
 pg.run()''',
 
 "pages/Main.py": '''import streamlit as st
-st.header("Welcome to the Main Page!")'''
+st.header("Welcome to the Main Page!")''',
 
 "LICENSE": '''
     Licensed under the Non-Profit Open Software License version 3.0
