@@ -17,7 +17,8 @@ files = {
 primaryColor = "#83c9ff"
 backgroundColor = "#00010F"
 secondaryBackgroundColor = "#232634"
-textColor = "#fff""",
+textColor = "#fff"
+""",
 
     "utils/__init__.py": "",
 
