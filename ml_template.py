@@ -1,28 +1,29 @@
 import os
 
-def create_ml_project_structure(base_dir):
+
+def create_ml_project_structure(name):
+    name = name
+    base_dir = os.getcwd()
     folders = [
         "data/raw",
         "data/processed",
         "notebooks",
-        "scripts",
         "models",
         "reports/figures",
-        "tests",
-        "configs",
-        "utils"
+        "name/modeling",
     ]
 
     files = {
         ".gitignore": "*.pyc\n__pycache__/\n.env\n.DS_Store\nmodels/\ndata/raw/\n",
         "README.md": "# Machine Learning Project\n\nProject Description.",
         "requirements.txt": "# Add your Python dependencies here\nscikit-learn\npandas\nnumpy\nmatplotlib\n",
-        "configs/config.yaml": "# Configuration file",
-        "scripts/train.py": "# Training script",
-        "scripts/evaluate.py": "# Evaluation script",
-        "utils/__init__.py": "",
-        "tests/test_pipeline.py": "# Add your tests here",
-        "notebooks/example.ipynb": "",  # Placeholder Jupyter Notebook
+        f"{name}/__init__.py": "",
+        "notebooks/example.ipynb": "",
+        f"{name}/features.py": "",
+        f"{name}/modeling/__init__.py": "",
+        f"{name}/modeling/predict.py": "",
+        f"{name}/modeling/train.py": "",
+        f"{name}/plots.py": "",
     }
 
     # Create folders
@@ -39,7 +40,8 @@ def create_ml_project_structure(base_dir):
 
     print(f"✅ ML project structure created in: {base_dir}")
 
+
 # Usage
 if __name__ == "__main__":
-    project_name = input("Enter your project name: ")
-    create_ml_project_structure(project_name)
+    name = input("enter project name:\n").replace(" ", "-").lower()
+    create_ml_project_structure(name)
