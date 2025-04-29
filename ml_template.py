@@ -1,8 +1,8 @@
 import os
 
 
-def create_ml_project_structure(name):
-    name = name
+def create_ml_project_structure():
+    name = src
     base_dir = os.getcwd()
     folders = [
         "data/raw",
@@ -43,5 +43,4 @@ def create_ml_project_structure(name):
 
 # Usage
 if __name__ == "__main__":
-    name = input("enter project name:\n").replace(" ", "-").lower()
-    create_ml_project_structure(name)
+    create_ml_project_structure()
