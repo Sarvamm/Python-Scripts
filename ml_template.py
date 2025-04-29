@@ -2,7 +2,7 @@ import os
 
 
 def create_ml_project_structure():
-    name = src
+    name = "src"
     base_dir = os.getcwd()
     folders = [
         "data/raw",
