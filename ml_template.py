@@ -10,7 +10,6 @@ def create_ml_project_structure():
         "notebooks",
         "models",
         "reports/figures",
-        "name/modeling",
     ]
 
     files = {
